@@ -25,7 +25,27 @@ def get_available_letters(letters_guessed):
     return "".join(return_list)
 
 
+def match_with_gaps(my_word, other_word):
+    i = 0
+    used_characters = []
+    if len(my_word)!=len(other_word):
+        return False
+    else:
+        for i in range(len(my_word)):
+            if my_word[i] != "_" and my_word[i] != other_word[i]:
+                return False
+            elif my_word[i] != "_" and my_word[i] == other_word[i]:
+                used_characters.append(my_word[i])
+            elif my_word[i] == "_" and other_word[i] in used_characters:
+                return False
+            elif my_word[i] == '_' and other_word[i] not in used_characters:
+                pass
+            else:
+                print("Error in cases!")
+
+    return True
 # test case
-secret_word = "apple"
-letters_guessed = ["e", "i", "k", "p", "r", "s"]
-print(get_available_letters(letters_guessed))
+
+print(match_with_gaps("te_t", "tact"))  # False
+print(match_with_gaps("a__le", "apple"))  # True
+print(match_with_gaps("ap_le", "apple"))  # False
