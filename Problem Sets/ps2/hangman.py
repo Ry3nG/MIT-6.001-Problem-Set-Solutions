@@ -135,7 +135,7 @@ def hangman(secret_word):
         print("  ", "-------------")
         if get_guessed_word(secret_word, letters_guessed) == secret_word:
             break
-        elif guess_count == 0:
+        elif guess_count <= 0:
             flag = False
             break
         print("  ", "You have", guess_count, "guesses left.")
@@ -230,8 +230,24 @@ def match_with_gaps(my_word, other_word):
         _ , and my_word and other_word are of the same length;
         False otherwise:
     """
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    i = 0
+    used_characters = []
+    if len(my_word)!=len(other_word):
+        return False
+    else:
+        for i in range(len(my_word)):
+            if my_word[i] != "_" and my_word[i] != other_word[i]:
+                return False
+            elif my_word[i] != "_" and my_word[i] == other_word[i]:
+                used_characters.append(my_word[i])
+            elif my_word[i] == "_" and other_word[i] in used_characters:
+                return False
+            elif my_word[i] == '_' and other_word[i] not in used_characters:
+                pass
+            else:
+                print("Error in cases!")
+
+    return True
 
 
 def show_possible_matches(my_word):
