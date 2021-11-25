@@ -1,7 +1,7 @@
 # Problem Set 2, hangman.py
 # Name: GONG ZERUI
-# Collaborators:
-# Time spent:
+# Collaborators: itsourcecode.com for the graphics of hang()
+# Time spent: 2hrs 52mins
 
 # Hangman Game
 # -----------------------------------
