@@ -350,7 +350,7 @@ def play_game(word_list):
     * For each hand, before playing, ask the user if they want to substitute
       one letter for another. If the user inputs 'yes', prompt them for their
       desired letter. This can only be done once during the game. Once the
-      substitue option is used, the user should not be asked if they want to
+      substitute option is used, the user should not be asked if they want to
       substitute letters in the future.
 
     * For each hand, ask the user if they would like to replay the hand.
